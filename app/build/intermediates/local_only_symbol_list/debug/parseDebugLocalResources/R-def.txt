@@ -1,0 +1,6 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_ghostchat
+string app_name
+style Theme.GhostChat
+xml data_extraction_rules

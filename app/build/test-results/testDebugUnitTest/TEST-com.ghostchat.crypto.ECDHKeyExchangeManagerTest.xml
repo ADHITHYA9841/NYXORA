@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ghostchat.crypto.ECDHKeyExchangeManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-02T13:41:51.402Z" hostname="ADHITHYA" time="0.308">
+  <properties/>
+  <testcase name="deriveAes256Key_returnsSameKeyForBothPeers" classname="com.ghostchat.crypto.ECDHKeyExchangeManagerTest" time="0.308"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

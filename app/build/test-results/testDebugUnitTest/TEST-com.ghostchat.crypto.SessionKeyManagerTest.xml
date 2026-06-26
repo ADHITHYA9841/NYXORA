@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ghostchat.crypto.SessionKeyManagerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-02T13:41:51.714Z" hostname="ADHITHYA" time="0.486">
+  <properties/>
+  <testcase name="destroySessionKey_removesKeyMaterial" classname="com.ghostchat.crypto.SessionKeyManagerTest" time="0.479"/>
+  <testcase name="replaceSessionKey_wipesInputAndAllowsKeyUse" classname="com.ghostchat.crypto.SessionKeyManagerTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

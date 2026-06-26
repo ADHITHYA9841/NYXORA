@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.ghostchat.app-debug-51:/drawable_ic_ghostchat.xml.flat",
+        "source": "com.ghostchat.app-main-53:/drawable/ic_ghostchat.xml"
+    },
+    {
+        "merged": "com.ghostchat.app-debug-51:/xml_data_extraction_rules.xml.flat",
+        "source": "com.ghostchat.app-main-53:/xml/data_extraction_rules.xml"
+    }
+]
