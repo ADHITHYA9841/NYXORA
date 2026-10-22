@@ -3,5 +3,10 @@
 /release/*.jks
 /release/*.keystore
 
+# Generated IDE and build output
+/.gradle/
+/.idea/
+**/build/
+
 # Local Android SDK configuration
 /local.properties
