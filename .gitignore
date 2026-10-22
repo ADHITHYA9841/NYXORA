@@ -1,0 +1,7 @@
+# Local Android release signing material
+/keystore.properties
+/release/*.jks
+/release/*.keystore
+
+# Local Android SDK configuration
+/local.properties

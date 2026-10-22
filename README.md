@@ -40,6 +40,10 @@ JVM crypto tests:
 ./gradlew testDebugUnitTest
 ```
 
+### Production release signing
+
+Production APKs use a private release keystore that must never be committed. Create `keystore.properties` in the project root with `storeFile=release/nyxora-release.jks`, `storePassword`, `keyAlias`, and `keyPassword`. Keep both that file and the keystore backed up securely; every future update must use the same key. The release build fails when signing is not configured. Build with `./gradlew assembleRelease`; the APK is written to `app/build/outputs/apk/release/`.
+
 ## Documentation
 
 - [System architecture](docs/architecture.md)

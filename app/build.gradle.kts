@@ -1,8 +1,17 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt)
+}
+
+val releaseSigningPropertiesFile = rootProject.file("keystore.properties")
+val releaseSigningProperties = Properties().apply {
+    if (releaseSigningPropertiesFile.exists()) {
+        releaseSigningPropertiesFile.inputStream().use(::load)
+    }
 }
 
 android {
@@ -13,14 +22,26 @@ android {
         applicationId = "com.ghostchat"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
+            val requiredSigningProperties = listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
+            val missingSigningProperties = requiredSigningProperties.filter {
+                releaseSigningProperties.getProperty(it).isNullOrBlank()
+            }
+            if (missingSigningProperties.isEmpty()) {
+                signingConfig = signingConfigs.create("releaseProduction") {
+                    storeFile = rootProject.file(releaseSigningProperties.getProperty("storeFile"))
+                    storePassword = releaseSigningProperties.getProperty("storePassword")
+                    keyAlias = releaseSigningProperties.getProperty("keyAlias")
+                    keyPassword = releaseSigningProperties.getProperty("keyPassword")
+                }
+            }
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -45,6 +66,20 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+    }
+}
+
+tasks.configureEach {
+    if (name == "assembleRelease" || name == "bundleRelease") {
+        doFirst {
+            val missingSigningProperties = listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
+                .filter { releaseSigningProperties.getProperty(it).isNullOrBlank() }
+            if (missingSigningProperties.isNotEmpty()) {
+                throw GradleException(
+                    "Production release signing is not configured. Add ${missingSigningProperties.joinToString()} to the local keystore.properties file."
+                )
+            }
+        }
     }
 }
 
