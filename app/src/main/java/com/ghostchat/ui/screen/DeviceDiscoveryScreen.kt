@@ -78,7 +78,7 @@ fun DeviceDiscoveryScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("GhostChat") },
+                title = { Text("NYXORA") },
                 actions = {
                     IconButton(onClick = onOpenSettings) {
                         Icon(Icons.Rounded.Settings, contentDescription = "Security settings")

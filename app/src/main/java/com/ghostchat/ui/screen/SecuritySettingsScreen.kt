@@ -103,7 +103,7 @@ fun SecuritySettingsScreen(
                             fontWeight = FontWeight.SemiBold,
                         )
                         Text(
-                            text = "Screen capture is blocked while GhostChat is open.",
+                            text = "Screen capture is blocked while NYXORA is open.",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )

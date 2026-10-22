@@ -1,6 +1,6 @@
-# GhostChat
+# NYXORA
 
-GhostChat is a privacy-focused Android messaging app for direct Bluetooth Classic chats between two nearby Android devices. It uses ephemeral ECDH session keys and AES-256-GCM encrypted message frames. Messages and key material live only in memory and are cleared when the session ends.
+NYXORA is a privacy-focused Android messaging app for direct Bluetooth Classic chats between two nearby Android devices. It uses ephemeral ECDH session keys and AES-256-GCM encrypted message frames. Messages and key material live only in memory and are cleared when the session ends.
 
 ## Features
 
@@ -11,7 +11,7 @@ GhostChat is a privacy-focused Android messaging app for direct Bluetooth Classi
 - In-memory messages only.
 - Panic mode to disconnect, clear messages, destroy keys, and return home.
 - Auto-delete timer for active sessions.
-- Screenshot and screen-recording protection via `FLAG_SECURE`.
+- Screenshot and screen-recording protection via `FLAG_SECURE` in release builds; disabled in debug builds for development and research screenshots.
 - Material 3 Compose UI with dark theme support.
 - Biometric setting flow using AndroidX Biometric.
 
@@ -51,4 +51,4 @@ JVM crypto tests:
 
 ## Security Notes
 
-GhostChat uses best-effort memory clearing. Kotlin/JVM `String`, Android framework internals, Bluetooth stack buffers, and garbage-collected object movement cannot be securely overwritten with the same guarantees as native memory. The app avoids persistence, excludes backups/transfers, does not request internet permission, clears in-memory state on session termination, and wipes mutable byte buffers wherever practical.
+NYXORA uses best-effort memory clearing. Kotlin/JVM `String`, Android framework internals, Bluetooth stack buffers, and garbage-collected object movement cannot be securely overwritten with the same guarantees as native memory. The app avoids persistence, excludes backups/transfers, does not request internet permission, clears in-memory state on session termination, and wipes mutable byte buffers wherever practical.

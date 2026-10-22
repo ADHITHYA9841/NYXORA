@@ -85,7 +85,7 @@ fun SplashScreen(
         ) {
             GhostLogo()
             Text(
-                text = "GhostChat",
+                text = "NYXORA",
                 style = MaterialTheme.typography.headlineLarge,
                 color = MaterialTheme.colorScheme.onBackground,
             )

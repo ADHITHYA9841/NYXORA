@@ -353,7 +353,7 @@ class ClassicBluetoothController @Inject constructor(
         }
 
     companion object {
-        private const val APP_NAME = "GhostChat"
+        private const val APP_NAME = "NYXORA"
         val SERVICE_UUID: UUID = UUID.fromString("d91f4ad4-6c6d-4f5f-9a44-2ff2b1e5f6c2")
     }
 }

@@ -40,7 +40,7 @@ class BiometricAuthManager(
         )
 
         val promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Unlock GhostChat")
+            .setTitle("Unlock NYXORA")
             .setSubtitle("Confirm your identity to enable biometric lock")
             .setAllowedAuthenticators(AUTHENTICATORS)
             .build()

@@ -1,5 +1,6 @@
 package com.ghostchat
 
+import android.content.pm.ApplicationInfo
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
@@ -18,7 +19,9 @@ class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        screenSecurityManager.enableScreenshotProtection(window)
+        if ((applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE) == 0) {
+            screenSecurityManager.enableScreenshotProtection(window)
+        }
 
         val viewModel = ViewModelProvider(this)[GhostChatViewModel::class.java]
         val biometricAuthManager = BiometricAuthManager(this)
